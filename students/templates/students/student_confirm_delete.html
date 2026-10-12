@@ -1,10 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends ‘students/base.html’ %}
 
-</body>
-</html>
+{% block title %}Delete Student{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body p-4 text-center">
+                <h2 class="text-danger fw-bold mb-3">
+                    Delete Student?
+                </h2>
+                <p>
+                    Are you sure you want to delete
+                    <strong>{{ student.name }}</strong>
+                    (ID: {{ student.id }})?
+                </p>
+                <p class="text-muted">
+                    This action cannot be undone.
+                </p>
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">
+                        Yes, Delete
+                    </button>
+                    <a
+                            href="{% url 'student_list' %}"
+                            class="btn btn-secondary">
+                        Cancel
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
