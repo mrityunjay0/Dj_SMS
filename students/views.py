@@ -13,7 +13,7 @@ def students_list(request):
 
     return render(
         request,
-        'students/student_list.html',
+        'students/students_list.html',
         {'students': students}
     )
 
@@ -30,7 +30,7 @@ def create_student(request):
                 request,'Student added successfully.'
             )
 
-            return redirect('student_list')
+            return redirect('students_list')
 
     else:
         form = StudentForm()
@@ -75,7 +75,7 @@ def student_update(request, id):
                 'Student updated successfully.'
             )
 
-            return redirect('student_list')
+            return redirect('students_list')
 
     else:
         form = StudentForm(instance=student)
@@ -104,7 +104,7 @@ def student_delete(request, id):
             'Student deleted successfully.'
         )
 
-        return redirect('student_list')
+        return redirect('students_list')
 
     return render(
         request,

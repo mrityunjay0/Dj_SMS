@@ -1,4 +1,4 @@
-{% extends ‘students/base.html’ %}
+{% extends 'students/base.html' %}
 
 {% block title %}{{ title }} | Student Management{% endblock %}
 
@@ -41,7 +41,7 @@
                             {{ button_text }}
                         </button>
                         <a
-                                href="{% url 'student_list' %}"
+                                href="{% url 'students_list' %}"
                                 class="btn btn-secondary">
                             Cancel
                         </a>

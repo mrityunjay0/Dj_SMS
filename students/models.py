@@ -11,15 +11,15 @@ class Student(models.Model):
 
     maths_marks = models.PositiveSmallIntegerField()
 
-@property
-def total_marks(self):
-    return self.english_marks + self.maths_marks
+    @property
+    def total_marks(self):
+        return self.english_marks + self.maths_marks
 
-@property
-def result(self):
-    if self.english_marks >= 35 and self.maths_marks >= 35:
-        return "Pass"
-    return "Fail"
+    @property
+    def result(self):
+        if self.english_marks >= 35 and self.maths_marks >= 35:
+            return "Pass"
+        return "Fail"
 
-def __str__(self):
-    return self.name
+    def __str__(self):
+        return self.name
